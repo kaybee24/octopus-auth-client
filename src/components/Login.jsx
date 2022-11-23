@@ -35,7 +35,7 @@ export default function Login({ setUser }) {
       });
   };
   return (
-    <div className="w-full px-4">
+    <div className="container w-full max-w-4xl px-4 mt-6">
       <h1 className='text-4xl font-paytoneOne uppercase'>Please log in</h1>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
         <label className="text-left" for="email">Email address</label>

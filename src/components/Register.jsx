@@ -39,7 +39,7 @@ export default function Register({ setUser }) {
     }
   };
   return (
-    <div className="w-full px-4">
+    <div className="container max-w-4xl px-4 mt-6">
       <h1 className='text-4xl uppercase font-paytoneOne'>Let's create your account</h1>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
         <label className="text-left" for="name">Name</label>
