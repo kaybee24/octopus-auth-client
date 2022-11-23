@@ -1,23 +1,17 @@
 import { Link } from "react-router-dom";
 
-export default function Header({ user, handleLogout }) {
+export default function Header({ user }) {
   return <header className="nav">
-    <div>{user ? `Welcome back ${user.name}` : "welcome"}</div>
-    <div className="flex justify-center">
+    {/* {user ? `Welcome back ${user.name}` : "Welcome"} */}
+    <div className="flex justify-center font-openSans bg-grey-100 py-4">
       <span className="px-6">
         <Link to="/">Home</Link>
       </span>
       <span className="px-6">
-        <Link to="/register">Register</Link>
+        <Link to="/my-feed">Feed</Link>
       </span>
       <span className="px-6">
-        <Link to="/login">Login</Link>
-      </span>
-      <span className="px-6">
-        <button onClick={handleLogout}>Logout</button>
-      </span>
-      <span className="px-6">
-        <Link to="/my-feed">the feed</Link>
+        <Link to="/account">Account</Link>
       </span>
     </div>
   </header>

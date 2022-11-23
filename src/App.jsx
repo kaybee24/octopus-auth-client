@@ -5,7 +5,10 @@ import LandingPage from "./components/LandingPage.jsx";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import LoggedInArea from "./components/LoggedInArea.jsx";
-import Header from "./Header.jsx";
+import ErrorPage from "./components/ErrorPage.jsx";
+import Account from "./components/Account";
+import Layout from "./components/Layout";
+
 function App() {
   const [user, setUser] = useState(null);
 
@@ -44,16 +47,34 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header user={user} handleLogout={handleLogout} />
-      <hr />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/register" element={<Register setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/my-feed" element={<LoggedInArea user={user} />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          path="/"
+          element={<LandingPage />}
+        />
+        <Route
+          path="/account"
+          element={<Account user={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/my-feed"
+          element={<LoggedInArea user={user} />}
+        />
+        <Route
+          path="*"
+          element={<ErrorPage />}
+        />
+      </Route>
+      <Route
+        path="/register"
+        element={<Register setUser={setUser} />}
+      />
+      <Route
+        path="/login"
+        element={<Login setUser={setUser} />}
+      />
+    </Routes>
   );
 }
 
