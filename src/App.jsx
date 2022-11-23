@@ -10,42 +10,42 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-      fetch(`${import.meta.env.VITE_AUTH_API}/me`,{
-        mode: "cors",
-        credentials: "include"
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.success) {
-            setUser(data.data);
-            console.log(data.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }, []);
-
-  const handleLogout = () => {
-    fetch(`${import.meta.env.VITE_AUTH_API}/logout`,{
+    fetch(`${import.meta.env.VITE_AUTH_API}/me`, {
       mode: "cors",
       credentials: "include"
     })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        window.location.reload();
-      }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          setUser(data.data);
+          console.log(data.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const handleLogout = () => {
+    fetch(`${import.meta.env.VITE_AUTH_API}/logout`, {
+      mode: "cors",
+      credentials: "include"
     })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          document.location.href = "/";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-  
+
   return (
     <div className="App">
-      <Header user={user} handleLogout={handleLogout}/>
+      <Header user={user} handleLogout={handleLogout} />
       <hr />
       <Routes>
         <Route path="/" element={<LandingPage />} />

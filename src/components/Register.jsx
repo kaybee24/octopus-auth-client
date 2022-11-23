@@ -7,7 +7,7 @@ export default function Register({ setUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
-    
+
     const data = new FormData(form);
     var object = {};
     data.forEach(function (value, key) {
@@ -39,16 +39,24 @@ export default function Register({ setUser }) {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" type="text" placeholder="name" />
-      <input name="email" type="text" placeholder="email" />
-      <input name="password" type="password" placeholder="password" />
-      <input
-        ref={passwordConfirmationRef}
-        type="password"
-        placeholder="Confirm Password"
-      />
-      <button>Register</button>
-    </form>
+    <div className="w-full px-4">
+      <h1 className='text-4xl uppercase font-paytoneOne'>Let's create your account</h1>
+      <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
+        <label className="text-left" for="name">Name</label>
+        <input className="p-5 my-2 bg-grey-100" name="name" type="text" placeholder="Enter your name" />
+        <label className="text-left" for="email">Email address</label>
+        <input className="p-5 my-2 bg-grey-100" name="email" type="text" placeholder="Enter a valid email" />
+        <label className="text-left" for="password">Password</label>
+        <input className="p-5 my-2 bg-grey-100" name="password" type="password" placeholder="Enter your password" />
+        <label className="text-left" for="password">Confirm your password</label>
+        <input
+          className="p-5 my-2 bg-grey-100"
+          ref={passwordConfirmationRef}
+          type="password"
+          placeholder="Confirm your password"
+        />
+        <button className='bg-coral-500 hover:bg-coral-900 py-3 my-6 rounded font-OpenSans'>Register</button>
+      </form>
+    </div>
   );
 }
