@@ -4,7 +4,7 @@ const Account = ({ handleLogout, user }) => {
     var myDate = new Date();
     var hours = myDate.getHours();
     var greet;
-
+    console.log(user)
     if (hours < 12)
         greet = "morning";
     else if (hours >= 12 && hours <= 17)

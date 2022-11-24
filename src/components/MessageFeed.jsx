@@ -7,6 +7,7 @@ export default function MyFeed({ user }) {
     if (user) {
       console.log("user is available, getting messages..");
       // send fetch request with cookies
+      console.log(user);
       fetch(import.meta.env.VITE_MSG_API, {
         mode: "cors",
         credentials: "include",
@@ -14,7 +15,7 @@ export default function MyFeed({ user }) {
         .then((res) => res.json())
         .then((messages) => {
           setMessages(messages.data)
-          console.log(messages.data)
+          console.log(messages)
         })
         .catch((err) => console.log(err));
     }
