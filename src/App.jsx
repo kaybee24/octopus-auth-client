@@ -8,9 +8,19 @@ import LoggedInArea from "./components/LoggedInArea.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import Account from "./components/Account";
 import Layout from "./components/Layout";
+import BeatLoader from "react-spinner/BeatLoader";
+
 
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading]= useState(false);
+
+  useEffect(()=> {
+    setLoading(true),
+    setTimeout(()=> { 
+      setLoading(false);
+    },2000)
+  },[])
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/me`, {
@@ -45,8 +55,14 @@ function App() {
         console.log(err);
       });
   };
+}
 
   return (
+    <div className="container">
+    {loading ? (<div> 
+      <BeatLoader/>  
+      </div>)
+      : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
@@ -54,7 +70,7 @@ function App() {
           element={<LandingPage />}
         />
         <Route
-          path="/account"
+        path="/account"
           element={<Account user={user} handleLogout={handleLogout} />}
         />
         <Route
@@ -65,17 +81,18 @@ function App() {
           path="*"
           element={<ErrorPage />}
         />
-      </Route>
-      <Route
+        </Route>
+        <Route
         path="/register"
         element={<Register setUser={setUser} />}
-      />
-      <Route
+        />
+        <Route
         path="/login"
         element={<Login setUser={setUser} />}
-      />
+        />
     </Routes>
-  );
-}
+  )}
+  </div>
+)
 
 export default App;
