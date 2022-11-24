@@ -8,7 +8,7 @@ import LoggedInArea from "./components/LoggedInArea.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import Account from "./components/Account";
 import Layout from "./components/Layout";
-import BeatLoader from "react-spinner/BeatLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 
 function App() {
@@ -55,8 +55,6 @@ function App() {
         console.log(err);
       });
   };
-}
-
   return (
     <div className="container">
     {loading ? (<div> 
@@ -94,5 +92,5 @@ function App() {
   )}
   </div>
 )
-
+}
 export default App;
