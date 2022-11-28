@@ -60,12 +60,13 @@ function App() {
   }, [])
 
   return (
-    <div className="container">
-      {loading ? (<div>
+    <div>
+      {loading ? (<div className="h-[100vh] grid content-center"><div className="flex justify-center">
         <BeatLoader />
-      </div>)
+      </div></div>)
         : (
           <Routes>
+            {/* Routes for everyone */}
             <Route
               path="/register"
               element={<Register setUser={setUser} />}
@@ -74,7 +75,7 @@ function App() {
               path="/login"
               element={<Login setUser={setUser} />}
             />
-
+            {/* Private Routes */}
             <Route path="/" element={<Layout />}>
               <Route
                 path="/"
