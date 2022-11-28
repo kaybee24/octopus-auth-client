@@ -1,17 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../Header';
 import Footer from './Footer';
+import Header from './Header';
 
 const Layout = () => {
     return (
-        <div className="App">
+        <>
             <Header />
             <div className="container max-w-4xl">
                 <Outlet />
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
 

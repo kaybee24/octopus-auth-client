@@ -13,7 +13,7 @@ export default function MyFeed({ user }) {
       })
         .then((res) => res.json())
         .then((messages) => {
-          setMessages(messages.data)
+          setMessages(messages.data);
           // console.log(messages.data)
         })
         .catch((err) => console.log(err));
@@ -23,8 +23,8 @@ export default function MyFeed({ user }) {
     <div>
       {messages.map((message) => (
         <div key={message._id}>
-          <p>
-            message: {message.message}
+          <p className="my-4">
+            {message.message}
           </p>
         </div>
       ))}
