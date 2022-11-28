@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NewPost from "./NewPost";
-import Feed from "./Feed";
+import NewPost from "../components/NewPost.jsx";
+import Feed from "../components/Feed.jsx";
 
 export default function LoggedInArea({ user }) {
   const [posts, setPosts] = useState([]);

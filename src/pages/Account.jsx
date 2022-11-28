@@ -1,5 +1,5 @@
-import React from 'react'
-import NewPost from './NewPost';
+import React from 'react';
+import NewPost from '../components/NewPost';
 
 const Account = ({ handleLogout, user }) => {
     let myDate = new Date();

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./components/LandingPage.jsx";
-import Register from "./components/Register.jsx";
-import Login from "./components/Login.jsx";
-import LoggedInArea from "./components/LoggedInArea.jsx";
-import ErrorPage from "./components/ErrorPage.jsx";
-import Account from "./components/Account";
-import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage.jsx";
+import Register from "./pages/Register.jsx";
+import Login from "./pages/Login.jsx";
+import LoggedInArea from "./pages/LoggedInArea.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import Account from "./pages/Account.jsx";
+import Layout from "./components/Layout.jsx";
 
 function App() {
   const [user, setUser] = useState(null);
