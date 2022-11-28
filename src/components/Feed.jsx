@@ -5,16 +5,16 @@ export default function MyFeed({ user }) {
 
   useEffect(() => {
     if (user) {
-      console.log("user is available, getting messages..");
+      // console.log("user is available, getting messages..");
       // send fetch request with cookies
-      fetch(import.meta.env.VITE_MSG_API, {
+      fetch(import.meta.env.VITE_PST_API, {
         mode: "cors",
         credentials: "include",
       })
         .then((res) => res.json())
         .then((messages) => {
           setMessages(messages.data)
-          console.log(messages.data)
+          // console.log(messages.data)
         })
         .catch((err) => console.log(err));
     }
@@ -24,7 +24,6 @@ export default function MyFeed({ user }) {
       {messages.map((message) => (
         <div key={message._id}>
           <p>
-            to: {message.to} <br />
             message: {message.message}
           </p>
         </div>

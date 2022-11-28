@@ -42,13 +42,13 @@ export default function Register({ setUser }) {
     <div className="container max-w-4xl px-4 mt-6">
       <h1 className='text-4xl uppercase font-paytoneOne'>Let's create your account</h1>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
-        <label className="text-left" for="name">Name</label>
+        <label className="text-left" htmlFor="name">Name</label>
         <input className="p-5 my-2 bg-grey-100" name="name" type="text" placeholder="Enter your name" />
-        <label className="text-left" for="email">Email address</label>
+        <label className="text-left" htmlFor="email">Email address</label>
         <input className="p-5 my-2 bg-grey-100" name="email" type="text" placeholder="Enter a valid email" />
-        <label className="text-left" for="password">Password</label>
+        <label className="text-left" htmlFor="password">Password</label>
         <input className="p-5 my-2 bg-grey-100" name="password" type="password" placeholder="Enter your password" />
-        <label className="text-left" for="password">Confirm your password</label>
+        <label className="text-left" htmlFor="password">Confirm your password</label>
         <input
           className="p-5 my-2 bg-grey-100"
           ref={passwordConfirmationRef}

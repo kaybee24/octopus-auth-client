@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="w-full bg-grey-100 px-4">
-            <ul className='grid justify-center text-center font-openSans'>
+            <ul className='flex justify-center font-openSans bg-grey-100 my-4'>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/my-feed">Feed</Link></li>
                 <li><Link to="#">New Post</Link></li>

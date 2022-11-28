@@ -13,8 +13,8 @@ export default function Login({ setUser }) {
       object[key] = value;
     });
 
-    console.log(JSON.stringify(object));
-    console.log(import.meta.env)
+    // console.log(JSON.stringify(object));
+    // console.log(import.meta.env)
     fetch(import.meta.env.VITE_AUTH_API + "/login", {
       method: "POST",
       mode: "cors",

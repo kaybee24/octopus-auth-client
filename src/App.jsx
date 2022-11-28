@@ -22,7 +22,7 @@ function App() {
         console.log(data);
         if (data.success) {
           setUser(data.data);
-          console.log(data.data);
+          // console.log(data.data);
         }
       })
       .catch((err) => {
@@ -48,6 +48,14 @@ function App() {
 
   return (
     <Routes>
+      <Route
+        path="/register"
+        element={<Register setUser={setUser} />}
+      />
+      <Route
+        path="/login"
+        element={<Login setUser={setUser} />}
+      />
       <Route path="/" element={<Layout />}>
         <Route
           path="/"
@@ -66,14 +74,6 @@ function App() {
           element={<ErrorPage />}
         />
       </Route>
-      <Route
-        path="/register"
-        element={<Register setUser={setUser} />}
-      />
-      <Route
-        path="/login"
-        element={<Login setUser={setUser} />}
-      />
     </Routes>
   );
 }
