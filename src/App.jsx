@@ -8,7 +8,6 @@ import LoggedInArea from "./pages/LoggedInArea.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
 import Layout from "./components/Layout.jsx";
-import ProtectedRoutes from "./ProtectedRoutes";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -63,16 +62,14 @@ function App() {
           path="/"
           element={<LandingPage />}
         />
-        <ProtectedRoutes user={user}>
-          <Route
-            path="/account"
-            element={<Account user={user} handleLogout={handleLogout} />}
-          />
-          <Route
-            path="/my-feed"
-            element={<LoggedInArea user={user} />}
-          />
-        </ProtectedRoutes>
+        <Route
+          path="/account"
+          element={<Account user={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/my-feed"
+          element={<LoggedInArea user={user} />}
+        />
         <Route
           path="*"
           element={<ErrorPage />}
