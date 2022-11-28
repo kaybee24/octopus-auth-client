@@ -30,8 +30,8 @@ export default function NewPost() {
     <div className="container max-w-4xl mt-6">
       <h2 className='text-2xl uppercase font-paytoneOne'>Create a New Post</h2>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
-        <label className="text-left" for="password">What's on your mind?</label>
-        <input className="p-5 my-2 bg-grey-100" name="post" type="text" placeholder="Tell us what is on your mind" />
+        <label className="text-left" htmlFor="message">What's on your mind?</label>
+        <input className="p-5 my-2 bg-grey-100" name="message" type="text" placeholder="Tell us what is on your mind" />
         <button className='bg-coral-500 hover:bg-coral-900 py-3 my-6 rounded font-OpenSans'>Create New Post</button>
       </form>
     </div>
