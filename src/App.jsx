@@ -8,7 +8,7 @@ import LoggedInArea from "./components/LoggedInArea.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import Account from "./components/Account";
 import Layout from "./components/Layout";
-import BeatLoader from "react-spinner/BeatLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 
 function App() {
@@ -55,14 +55,14 @@ function App() {
         console.log(err);
       });
   };
+
+
+if (loading) {
+  return <BeatLoader color="red" size={20} />;
 }
 
-  return (
+return (
     <div className="container">
-    {loading ? (<div> 
-      <BeatLoader/>  
-      </div>)
-      : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
@@ -91,8 +91,6 @@ function App() {
         element={<Login setUser={setUser} />}
         />
     </Routes>
-  )}
   </div>
-)
-
+)}
 export default App;
