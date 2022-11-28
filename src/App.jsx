@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import BeatLoader from "react-spinners/BeatLoader";
 import LandingPage from "./pages/LandingPage.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
@@ -59,35 +60,42 @@ function App() {
   }, [])
 
   return (
-    <Routes>
-      <Route
-        path="/register"
-        element={<Register setUser={setUser} />}
-      />
-      <Route
-        path="/login"
-        element={<Login setUser={setUser} />}
-      />
+    <div className="container">
+      {loading ? (<div>
+        <BeatLoader />
+      </div>)
+        : (
+          <Routes>
+            <Route
+              path="/register"
+              element={<Register setUser={setUser} />}
+            />
+            <Route
+              path="/login"
+              element={<Login setUser={setUser} />}
+            />
 
-      <Route path="/" element={<Layout />}>
-        <Route
-          path="/"
-          element={<LandingPage />}
-        />
-        <Route
-          path="/account"
-          element={<Account user={user} handleLogout={handleLogout} />}
-        />
-        <Route
-          path="/my-feed"
-          element={<LoggedInArea user={user} />}
-        />
-        <Route
-          path="*"
-          element={<ErrorPage />}
-        />
-      </Route>
-    </Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                path="/"
+                element={<LandingPage />}
+              />
+              <Route
+                path="/account"
+                element={<Account user={user} handleLogout={handleLogout} />}
+              />
+              <Route
+                path="/my-feed"
+                element={<LoggedInArea user={user} />}
+              />
+              <Route
+                path="*"
+                element={<ErrorPage />}
+              />
+            </Route>
+          </Routes>
+        )}
+    </div>
   );
 }
 
