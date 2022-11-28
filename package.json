@@ -1,8 +1,9 @@
 {
-  "name": "tmpl-auth-client",
+  "name": "octopus-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "Full stack project is a social networking project aimed at solving environmental problems. The idea is that people can register on the site and attend events, for example, where people will gather in a certain place and pick up litter.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
