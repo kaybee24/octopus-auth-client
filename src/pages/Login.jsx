@@ -1,8 +1,12 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { VscError } from "react-icons/vsc";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 export default function Login({ setUser }) {
   let navigate = useNavigate();
+  const [errorEmail, setErrorEmail] = useState(null);
+  const [errorPassword, setErrorPassword] = useState(null);
 
   const handleSubmit = useCallback( (event) => {
     event.preventDefault();
@@ -26,21 +30,28 @@ export default function Login({ setUser }) {
     })
       .then((response) => response.json())
       .then((data) => {
+        setErrorEmail(null);
+        setErrorPassword(null);
         if (data.success) {
           setUser(data.data);
           navigate(`/my-feed`);
         } else {
-          alert(data.message);
+          if(data.data.status === 401){
+            setErrorEmail(true)
+          } else {
+            setErrorPassword(true)
+          }
+          //alert(data.message);
         }
       });
-  }, []);
+  }, []);  // error && "Wrong email or password"
   return (
     <div className="container w-full max-w-4xl px-4 mt-6">
       <h1 className='text-4xl font-paytoneOne uppercase'>Please log in</h1>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
-        <label className="text-left" for="email">Email address</label>
+        <label className="text-left" for="email">{errorEmail ?  <><p>Wrong email</p> <VscError/> </> : <IoIosCheckmarkCircleOutline />}</label>
         <input className="p-5 my-2 bg-grey-100" name="email" type="text" placeholder="email" />
-        <label className="text-left" for="email">Password</label>
+        <label className="text-left" for="password">{errorPassword ?  <><p>Wrong password</p> <VscError/> </> : <IoIosCheckmarkCircleOutline />}Password</label>
         <input className="p-5 my-2 bg-grey-100" name="password" type="password" placeholder="password" />
         <button className='bg-coral-500 hover:bg-coral-900 py-3 my-6 rounded font-OpenSans'>Login</button>
       </form>
