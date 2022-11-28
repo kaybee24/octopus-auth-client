@@ -1,10 +1,9 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 
-const ProtectedRoutes = () => {
-    const isAuth = { 'token': false };
+const ProtectedRoutes = ({ user }) => {
     return (
-        !auth.token ? <Outlet /> : <Navigate to="/login" />
+        user ? <Outlet /> : <Navigate to="/login" />
     )
 }
 
