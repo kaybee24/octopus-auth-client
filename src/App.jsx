@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./components/LandingPage.jsx";
-import Register from "./components/Register.jsx";
-import Login from "./components/Login.jsx";
-import LoggedInArea from "./components/LoggedInArea.jsx";
-import ErrorPage from "./components/ErrorPage.jsx";
-import Account from "./components/Account";
+import LandingPage from "./pages/LandingPage.jsx";
+import Register from "./pages/Register.jsx";
+import Login from "./pages/Login.jsx";
+import LoggedInArea from "./pages/LoggedInArea.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import Account from "./pages/Account";
 import Layout from "./components/Layout";
 import BeatLoader from "react-spinners/BeatLoader";
 
-
-function App() {
+const useApp = () => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading]= useState(false);
-
-  useEffect(()=> {
-    setLoading(true),
-    setTimeout(()=> { 
-      setLoading(false);
-    },2000)
-  },[])
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/me`, {
@@ -39,8 +30,7 @@ function App() {
         console.log(err);
       });
   }, []);
-
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/logout`, {
       mode: "cors",
       credentials: "include"
@@ -54,7 +44,20 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
+  return {user, handleLogout, setUser}
+};
+
+function App() {
+  const {user, handleLogout, setUser} = useApp();
+  const [loading, setLoading]= useState(false);
+
+  useEffect(()=> {
+    setLoading(true),
+    setTimeout(()=> { 
+      setLoading(false);
+    },2000)
+  },[])
   return (
     <div className="container">
     {loading ? (<div> 

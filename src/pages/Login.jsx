@@ -1,10 +1,10 @@
-import { useRef } from "react";
+import { useRef, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Login({ setUser }) {
   let navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback( (event) => {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form);
@@ -33,7 +33,7 @@ export default function Login({ setUser }) {
           alert(data.message);
         }
       });
-  };
+  }, []);
   return (
     <div className="container w-full max-w-4xl px-4 mt-6">
       <h1 className='text-4xl font-paytoneOne uppercase'>Please log in</h1>

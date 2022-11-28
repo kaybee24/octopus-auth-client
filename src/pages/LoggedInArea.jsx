@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MessageForm from "./MessageForm";
-import MessageFeed from "./MessageFeed";
+import MessageFeed from "../components/MessageFeed";
 import Post from "./Post";
 
 export default function LoggedInArea({ user }) {

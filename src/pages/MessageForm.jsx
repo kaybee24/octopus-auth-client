@@ -7,9 +7,11 @@
 //     "to": "dave",
 //     "message": "1010101000101101"
 // }
+import { useCallback } from "react";
+
 
 export default function MessageForm() {
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form);
@@ -35,7 +37,7 @@ export default function MessageForm() {
           alert(data.message);
         }
       });
-  };
+  }, []);
   return (
     <form onSubmit={handleSubmit}>
       <input name="to" type="text" placeholder="to" />

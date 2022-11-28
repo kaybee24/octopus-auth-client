@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Account = ({ handleLogout, user }) => {
-    var myDate = new Date();
-    var hours = myDate.getHours();
-    var greet;
+    let myDate = new Date();
+    let hours = myDate.getHours();
+    let greet;
 
     if (hours < 12)
         greet = "morning";
