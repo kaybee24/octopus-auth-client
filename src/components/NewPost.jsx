@@ -1,5 +1,7 @@
-export default function NewPost() {
-  const handleSubmit = (event) => {
+import { useCallback } from "react";
+
+const NewPost = () => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form);
@@ -20,12 +22,13 @@ export default function NewPost() {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // console.log(data);
+          console.log(data);
         } else {
           alert(data.message);
         }
       });
-  };
+  }, []);
+
   return (
     <div className="container max-w-4xl mt-6">
       <h2 className='text-2xl uppercase font-paytoneOne'>Create a New Post</h2>
@@ -37,3 +40,5 @@ export default function NewPost() {
     </div>
   );
 }
+
+export default NewPost

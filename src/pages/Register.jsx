@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Register({ setUser }) {
   let navigate = useNavigate();
   const passwordConfirmationRef = useRef();
-  const handleSubmit = (event) => {
+
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
 
@@ -37,7 +38,9 @@ export default function Register({ setUser }) {
     } else {
       alert("Passwords do not match!");
     }
-  };
+  },
+    [],);
+
   return (
     <div className="container max-w-4xl px-4 mt-6">
       <h1 className='text-4xl uppercase font-paytoneOne'>Let's create your account</h1>
