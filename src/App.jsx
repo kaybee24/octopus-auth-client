@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage.jsx";
@@ -9,7 +9,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
 import Layout from "./components/Layout.jsx";
 
-function App() {
+const useApp = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -22,15 +22,14 @@ function App() {
         console.log(data);
         if (data.success) {
           setUser(data.data);
-          // console.log(data.data);
+          console.log(data.data);
         }
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/logout`, {
       mode: "cors",
       credentials: "include"
@@ -44,7 +43,20 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
+  return { user, handleLogout, setUser }
+};
+
+function App() {
+  const { user, handleLogout, setUser } = useApp();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true),
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000)
+  }, [])
 
   return (
     <Routes>
