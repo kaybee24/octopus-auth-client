@@ -8,10 +8,9 @@ import Login from "./pages/Login.jsx";
 import LoggedInArea from "./pages/LoggedInArea.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
-import Layout from "./components/Layout.jsx";
+import HeaderLoggedIn from './components/Header.jsx';
 
-
-const useApp = () => {
+function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -21,16 +20,16 @@ const useApp = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
           setUser(data.data);
-          console.log(data.data);
         }
+        console.log("hi")
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
   const handleLogout = useCallback(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/logout`, {
       mode: "cors",
@@ -46,28 +45,23 @@ const useApp = () => {
         console.log(err);
       });
   }, []);
-  return { user, handleLogout, setUser }
-};
 
-function App() {
-  const { user, handleLogout, setUser } = useApp();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true),
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000)
-  }, [])
+    if (user) setLoading(false)
+    // TODO: only do loading in response to actual fetch requests
+    setTimeout(() => setLoading(false), 2000)
+  }, [user])
 
   return (
     <div>
+      <HeaderLoggedIn user={user} handleLogout={handleLogout} />
       {loading ? (<div className="h-[100vh] grid content-center"><div className="flex justify-center">
         <BeatLoader />
       </div></div>)
         : (
           <Routes>
-            {/* Routes for everyone */}
             <Route
               path="/register"
               element={<Register setUser={setUser} />}
@@ -76,25 +70,23 @@ function App() {
               path="/login"
               element={<Login setUser={setUser} />}
             />
-            {/* Private Routes */}
-            <Route path="/" element={<Layout />}>
-              <Route
-                path="/"
-                element={<LandingPage />}
-              />
-              <Route
-                path="/account"
-                element={<Account user={user} handleLogout={handleLogout} />}
-              />
-              <Route
-                path="/my-feed"
-                element={<LoggedInArea user={user} />}
-              />
-              <Route
-                path="*"
-                element={<ErrorPage />}
-              />
-            </Route>
+            <Route
+              path="/"
+              element={<LandingPage user={user} />}
+            />
+            <Route
+              path="/account"
+              element={<Account user={user} handleLogout={handleLogout} />
+              }
+            />
+            <Route
+              path="/my-feed"
+              element={<LoggedInArea user={user} />}
+            />
+            <Route
+              path="*"
+              element={<ErrorPage />}
+            />
           </Routes>
         )}
     </div>

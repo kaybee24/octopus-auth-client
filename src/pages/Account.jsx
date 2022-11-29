@@ -12,6 +12,7 @@ const Account = ({ handleLogout, user }) => {
         greet = "afternoon";
     else if (hours >= 17 && hours <= 24)
         greet = "evening";
+    if (!user) return <h1>loading</h1>
     return (
         <div className="w-full px-4 text-darkgrey-900">
             <div className="py-6">

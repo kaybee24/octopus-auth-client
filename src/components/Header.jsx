@@ -1,11 +1,12 @@
 import React from "react";
 import Logo from "./Logo";
-import Nav from "./Nav";
+import NavLoggedIn from "./NavLoggedIn.jsx";
+import NavNotLoggedIn from "./NavNotLoggedIn.jsx";
 
-export default function Header() {
+export default function Header({ user }) {
   return (
     <header className="flex justify-between bg-grey-100 py-4 px-12">
       <Logo />
-      <Nav />
+      {user ? <NavLoggedIn /> : <NavNotLoggedIn />}
     </header>)
 }

@@ -18,13 +18,14 @@ export default function MyFeed({ user }) {
         .then((res) => res.json())
         .then((messages) => {
           setMessages(messages.data);
-          // console.log(messages.data)
+          console.log(messages)
         })
         .catch((err) => console.log(err));
     }
   }, [user]);
+
   return (
-    <div style={{height:"2000px"}}>
+    <div style={{ height: "2000px" }}>
       <ScrollToTop />
       {messages.map((message) => (
         <div key={message._id}>
@@ -33,7 +34,7 @@ export default function MyFeed({ user }) {
           </p>
         </div>
       ))}
-      <Pagination page={page} setPage={setPage} rangeLength={20} /> 
+      <Pagination page={page} setPage={setPage} rangeLength={20} />
     </div>
   );
 }
