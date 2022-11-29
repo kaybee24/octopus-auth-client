@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
 import Layout from "./components/Layout.jsx";
 
+
 const useApp = () => {
   const [user, setUser] = useState(null);
 
