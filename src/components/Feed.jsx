@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import ScrollToTop from "./scrollToTop";
+import Pagination from "./Pagination";
 
 export default function MyFeed({ user }) {
   const [messages, setMessages] = useState([]);
+  const [page, setPage] = useState(0);
+  const [hitsPerPage, setHitsPerPage] = useState(10);
 
   useEffect(() => {
     if (user) {
@@ -30,6 +33,7 @@ export default function MyFeed({ user }) {
           </p>
         </div>
       ))}
+      <Pagination page={page} setPage={setPage} rangeLength={20} /> 
     </div>
   );
 }
