@@ -21,7 +21,7 @@ export default function MyFeed({ user }) {
     }
   }, [user]);
   return (
-    <div>
+    <div style={{height:"2000px"}}>
       <ScrollToTop />
       {messages.map((message) => (
         <div key={message._id}>
