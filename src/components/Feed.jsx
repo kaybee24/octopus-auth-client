@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ScrollToTop from "./scrollToTop";
 
 export default function MyFeed({ user }) {
   const [messages, setMessages] = useState([]);
@@ -21,6 +22,7 @@ export default function MyFeed({ user }) {
   }, [user]);
   return (
     <div>
+      <ScrollToTop />
       {messages.map((message) => (
         <div key={message._id}>
           <p className="my-4">
