@@ -33,5 +33,7 @@ export default () => (
         <p>Already have an account? <Link className="text-coral-500 hover:text-coral-900" to="/login">Log In</Link>.</p>
       </div>
     </div>
+    <div className='page-bar'>
+    </div>
   </>
 );
