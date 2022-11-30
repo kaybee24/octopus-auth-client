@@ -84,7 +84,7 @@ export default function Login({ setUser }) {
           type="password"
           placeholder="password" />
         <button
-          className='bg-coral-500 hover:bg-coral-900 py-3 my-6 w-[15rem] rounded font-OpenSans'>
+          className='bg-coral-500 hover:bg-coral-900 py-3 my-6 w-[15rem] rounded font-OpenSans font-bold'>
           Login
         </button>
       </form>

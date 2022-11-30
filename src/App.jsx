@@ -9,6 +9,7 @@ import LoggedInArea from "./pages/LoggedInArea.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
 import Header from './components/Header.jsx';
+import NewEvent from "./components/NewEvent";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -23,7 +24,7 @@ function App() {
         if (data.success) {
           setUser(data.data);
         }
-        console.log("hi")
+        // console.log("hi")
       })
       .catch((err) => {
         console.log(err);
@@ -82,6 +83,11 @@ function App() {
             <Route
               path="/my-feed"
               element={<LoggedInArea user={user} />}
+            />
+            <Route
+              path="/new-event"
+              element={<NewEvent user={user} />
+              }
             />
             <Route
               path="*"
