@@ -58,7 +58,7 @@ export default function Register({ setUser }) {
           type="password"
           placeholder="Confirm your password"
         /> */}
-        <button className='bg-coral-500 hover:bg-coral-900 w-[15rem] py-3 my-6 rounded font-OpenSans'>Register</button>
+        <button className='bg-coral-500 hover:bg-coral-900 w-[15rem] py-3 my-6 rounded font-OpenSans font-bold'>Register</button>
       </form>
       <div className="w-full">
         <p className="font-openSans text-offwhite-900">Got an account already?</p>
