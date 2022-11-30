@@ -1,5 +1,5 @@
 import { useCallback, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register({ setUser }) {
   let navigate = useNavigate();
@@ -42,24 +42,33 @@ export default function Register({ setUser }) {
     [],);
 
   return (
-    <div className="container max-w-4xl px-4 mt-6">
-      <h2 className='text-4xl uppercase font-paytoneOne'>Let's create your account</h2>
+    <div className="container max-w-7xl px-4 mt-6">
+      <h2 className='text-4xl uppercase font-paytoneOne text-offwhite-900'>Let's create your account</h2>
       <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
-        <label className="text-left" htmlFor="name">Name</label>
-        <input className="p-5 my-2 bg-grey-100" name="name" type="text" placeholder="Enter your name" />
-        <label className="text-left" htmlFor="email">Email address</label>
-        <input className="p-5 my-2 bg-grey-100" name="email" type="text" placeholder="Enter a valid email" />
-        <label className="text-left" htmlFor="password">Password</label>
-        <input className="p-5 my-2 bg-grey-100" name="password" type="password" placeholder="Enter your password" />
-        <label className="text-left" htmlFor="password">Confirm your password</label>
+        <label className="text-left text-offwhite-900" htmlFor="name">Name</label>
+        <input className="p-5 my-2 mb-8 bg-grey-100 outline-ocean-700" name="name" type="text" placeholder="Enter your name" />
+        <label className="text-left text-offwhite-900" htmlFor="email">Email address</label>
+        <input className="p-5 my-2 mb-8 bg-grey-100 outline-ocean-700" name="email" type="text" placeholder="Enter a valid email" />
+        <label className="text-left text-offwhite-900" htmlFor="password">Password</label>
+        <input className="p-5 my-2 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Enter your password" />
+        {/*  <label className="text-left" htmlFor="password">Confirm your password</label>
         <input
           className="p-5 my-2 bg-grey-100"
           ref={passwordConfirmationRef}
           type="password"
           placeholder="Confirm your password"
-        />
-        <button className='bg-coral-500 hover:bg-coral-900 py-3 my-6 rounded font-OpenSans'>Register</button>
+        /> */}
+        <button className='bg-coral-500 hover:bg-coral-900 w-[15rem] py-3 my-6 rounded font-OpenSans'>Register</button>
       </form>
+      <div className="w-full">
+        <p className="font-openSans text-offwhite-900">Got an account already?</p>
+        <Link to="/login">
+          <button
+            className='border border-coral-500 hover:bg-coral-900 py-3 px-8 my-6 w-[15rem] rounded font-OpenSans text-offwhite-900'>
+            LogIn
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

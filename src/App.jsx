@@ -8,7 +8,7 @@ import Login from "./pages/Login.jsx";
 import LoggedInArea from "./pages/LoggedInArea.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
-import HeaderLoggedIn from './components/Header.jsx';
+import Header from './components/Header.jsx';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div>
-      <HeaderLoggedIn user={user} handleLogout={handleLogout} />
+      <Header user={user} handleLogout={handleLogout} />
       {loading ? (<div className="h-[100vh] grid content-center"><div className="flex justify-center">
         <BeatLoader />
       </div></div>)

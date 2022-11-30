@@ -25,11 +25,13 @@ export default function MyFeed({ user }) {
   }, [user]);
 
   return (
-    <div style={{ height: "2000px" }}>
+    <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
       <ScrollToTop />
-      {messages.map((message) => (
-        <div key={message._id}>
-          <p className="my-4">
+      {messages.slice(0).reverse().map((message) => (
+        <div key={message._id} className="max-w-[70rem]">
+          <p className="my-8">
+            {message.user.name} – {message.createdAt}
+            <br />
             {message.message}
           </p>
         </div>
