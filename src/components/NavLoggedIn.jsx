@@ -1,16 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Burger from './Burger'
 
 const NavLoggedIn = () => {
     return (
-        <nav>
-            <ul className='flex justify-center font-openSans space-x-8'>
-                <li><Link to="/">Home</Link></li>
+        <div className='flex gap-[20px]'>
+{/*             <div className='flex font-openSans space-x-8 w-[3em]'>
                 LOGGED IN
-                <li><Link to="/my-feed">Feed</Link></li>
-                <li><Link to="/account">Account</Link></li>
-            </ul>
-        </nav>
+            </div> */}
+            <Burger />
+        </div>
     )
 }
 

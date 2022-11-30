@@ -4,12 +4,11 @@ import Burger from './Burger'
 
 const NavNotLoggedIn = () => {
     return (
-        <nav className='relative'>
+        <nav>
             <ul className='flex justify-center font-openSans space-x-8'>
                 NOT LOGGED IN
-                <li><Link to="/">Home</Link></li>
             </ul>
-            <Burger/>
+
         </nav>
     )
 }
