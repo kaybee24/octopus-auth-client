@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Account from "./pages/Account.jsx";
 import Header from './components/Header.jsx';
 import NewEvent from "./components/NewEvent";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -95,6 +96,7 @@ function App() {
             />
           </Routes>
         )}
+      <Footer />
     </div>
   );
 }
