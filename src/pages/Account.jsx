@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NewPost from '../components/NewPost';
 
 const Account = ({ handleLogout, user }) => {
@@ -14,11 +15,15 @@ const Account = ({ handleLogout, user }) => {
         greet = "evening";
     if (!user) return <h1>loading</h1>
     return (
-        <div className="w-full px-4 text-darkgrey-900">
-            <div className="py-6">
-                <h1 className="text-4xl font-paytoneOne uppercase">{`Good ${greet} ${user.name}`}</h1>
-                <NewPost />
-                <button className='bg-off-white-500 border border-coral-500 hover:bg-coral-900 py-3 px-8 my-6 rounded font-OpenSans' onClick={handleLogout}>Logout</button>
+        <div className="container max-w-7xl px-4 mt-6 text-offwhite-900">
+            <h1 className="text-4xl font-paytoneOne uppercase">{`Good ${greet} ${user.name}`}</h1>
+            <div className='grid md:flex md:space-x-6'>
+                <Link to="/my-feed"><button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>Create a New Post</button></Link>
+                <Link to="/my-feed"><button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>Create a New Event</button></Link>
+            </div>
+            <div className="grid">
+                <button className='bg-off-white-500 border border-coral-500 hover:bg-coral-900 w-[15rem] py-3 px-8 my-2 rounded font-OpenSans' onClick={handleLogout}>Logout</button>
+                <button className='bg-off-white-500 border border-coral-500 hover:bg-coral-900 w-[15rem] py-3 px-8 my-2 rounded font-OpenSans'>Delete Account</button>
             </div>
         </div>
     )
