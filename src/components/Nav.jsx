@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Burger from './Burger'
+
 
 const Nav = () => {
     return (
