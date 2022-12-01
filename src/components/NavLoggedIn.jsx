@@ -1,5 +1,6 @@
 import React from 'react'
 import Burger from './Burger.jsx'
+import ScrollToTop from './scrollToTop.jsx'
 
 const NavLoggedIn = () => {
     return (
@@ -8,6 +9,7 @@ const NavLoggedIn = () => {
                 LOGGED IN
             </div> */}
             <Burger />
+            <ScrollToTop  />
         </div>
     )
 }
