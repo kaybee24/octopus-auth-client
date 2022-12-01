@@ -5,8 +5,12 @@ import NavNotLoggedIn from "./NavNotLoggedIn.jsx";
 
 export default function Header({ user }) {
   return (
-    <header className="flex justify-between bg-ocean-900 py-4 px-12">
+    <>
       <Logo />
-      {user ? <NavLoggedIn /> : <NavNotLoggedIn />}
-    </header>)
+          <header className="flex justify-between bg-ocean-900 py-4 px-12">
+            {user ? <NavLoggedIn /> : <NavNotLoggedIn />}
+          </header>
+    </>
+  );
+
 }
