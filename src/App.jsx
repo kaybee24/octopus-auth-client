@@ -11,6 +11,7 @@ import Account from "./pages/Account.jsx";
 import Header from './components/Header.jsx';
 import NewEvent from "./components/NewEvent";
 import Footer from "./components/Footer";
+import LoggedInAreaEvents from "./pages/LoggedInAreaEvents";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -89,6 +90,10 @@ function App() {
               path="/new-event"
               element={<NewEvent user={user} />
               }
+            />
+            <Route
+              path="/feed-events"
+              element={<LoggedInAreaEvents user={user} />}
             />
             <Route
               path="*"

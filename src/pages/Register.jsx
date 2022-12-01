@@ -42,32 +42,39 @@ export default function Register({ setUser }) {
     [],);
 
   return (
-    <div className="container max-w-7xl px-4 mt-6">
-      <h2 className='text-4xl uppercase font-paytoneOne text-offwhite-900'>Let's create your account</h2>
-      <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
-        <label className="text-left text-offwhite-900" htmlFor="name">Name</label>
-        <input className="p-5 my-2 mb-8 bg-grey-100 outline-ocean-700" name="name" type="text" placeholder="Enter your name" />
-        <label className="text-left text-offwhite-900" htmlFor="email">Email address</label>
-        <input className="p-5 my-2 mb-8 bg-grey-100 outline-ocean-700" name="email" type="text" placeholder="Enter a valid email" />
-        <label className="text-left text-offwhite-900" htmlFor="password">Password</label>
-        <input className="p-5 my-2 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Enter your password" />
-        <label className="text-left" htmlFor="password">Confirm your password</label>
-        <input
-          className="p-5 my-2 bg-grey-100"
-          ref={passwordConfirmationRef}
-          type="password"
-          placeholder="Confirm your password"
+    <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
+      <h2 className="xs:text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
+        Let's create your account
+      </h2>
+      <form className="w-full flex flex-col py-4 font-openSans gap-[0.3rem]" onSubmit={handleSubmit}>
+        <label htmlFor="name">
+          Name
+        </label>
+        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="name" type="text" placeholder="Enter your name" />
+        <label htmlFor="email">
+          Email address
+        </label>
+        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="email" type="text" placeholder="Enter a valid email" />
+        <label htmlFor="password">
+          Password
+        </label>
+        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Password" />
+        <label htmlFor="password">
+          Confirm your password
+        </label>
+        <input className="p-5 bg-grey-100 outline-ocean-700" ref={passwordConfirmationRef} type="password" placeholder="Confirm your password"
         />
-        <button className='bg-coral-500 hover:bg-coral-900 w-[15rem] py-3 my-6 rounded font-OpenSans font-bold'>Register</button>
+        <button className='bg-coral-500 hover:bg-coral-900 text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
+          Register
+        </button>
       </form>
       <div className="w-full">
-        <p className="font-openSans text-offwhite-900">Got an account already?</p>
-        <Link to="/login">
-          <button
-            className='border border-coral-500 hover:bg-coral-900 py-3 px-8 my-6 w-[15rem] rounded font-OpenSans text-offwhite-900'>
-            LogIn
-          </button>
-        </Link>
+        <p className="text-grey-500">
+          Got an account already?&nbsp;
+          <Link className="text-coral-500 hover:text-coral-900" to="/login">
+            Log In here
+          </Link>.
+        </p>
       </div>
     </div>
   );
