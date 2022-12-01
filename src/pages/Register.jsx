@@ -51,13 +51,13 @@ export default function Register({ setUser }) {
         <input className="p-5 my-2 mb-8 bg-grey-100 outline-ocean-700" name="email" type="text" placeholder="Enter a valid email" />
         <label className="text-left text-offwhite-900" htmlFor="password">Password</label>
         <input className="p-5 my-2 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Enter your password" />
-        {/*  <label className="text-left" htmlFor="password">Confirm your password</label>
+        <label className="text-left" htmlFor="password">Confirm your password</label>
         <input
           className="p-5 my-2 bg-grey-100"
           ref={passwordConfirmationRef}
           type="password"
           placeholder="Confirm your password"
-        /> */}
+        />
         <button className='bg-coral-500 hover:bg-coral-900 w-[15rem] py-3 my-6 rounded font-OpenSans font-bold'>Register</button>
       </form>
       <div className="w-full">
