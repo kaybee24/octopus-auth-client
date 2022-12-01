@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css"
 
 
 const Burger = () => {
-  const [navbar, setNavbar] = useState(false);
+    const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="relative w-full bg-white flex items-center">
+        <nav className="relative w-full flex items-center text-offwhite-900">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -51,9 +51,8 @@ const Burger = () => {
                 </div>
                 <div>
                     <div
-                        className={`relative flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                            navbar ? "block" : "hidden"
-                        }`}
+                        className={`relative flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                            }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-gray-600 hover:text-blue-600">
