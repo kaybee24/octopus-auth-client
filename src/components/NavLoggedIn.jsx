@@ -1,5 +1,5 @@
 import React from 'react'
-import Burger from './Burger'
+import Burger from './Burger.jsx'
 
 const NavLoggedIn = () => {
     return (
