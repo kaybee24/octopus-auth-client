@@ -15,14 +15,29 @@ const Account = ({ handleLogout, user }) => {
     if (!user) return <h1>loading</h1>
     return (
         <div className="container max-w-7xl px-4 mt-6 text-offwhite-900">
-            <h1 className="text-4xl font-paytoneOne uppercase">{`Good ${greet} ${user.name}`}</h1>
+            <h2 className="xs:text-4xl md:text-6xl pb-2 font-paytoneOne uppercase">
+                {`Good ${greet} ${user.name}`}
+            </h2>
+            <p className='text-xl leading-relaxed'>We are happy to have you.</p>
             <div className='grid md:flex md:space-x-6'>
-                <Link to="/my-feed"><button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>Create a New Post</button></Link>
-                <Link to="/new-event"><button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>Create a New Event</button></Link>
+                <Link to="/my-feed">
+                    <button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>
+                        + Create a New Post
+                    </button>
+                </Link>
+                <Link to="/feed-events">
+                    <button className='bg-coral-500 hover:bg-coral-900 h-[10rem] w-[29rem] md:w-[38rem] my-6 rounded font-OpenSans text-darkgrey-900'>
+                        + Create a New Event
+                    </button>
+                </Link>
             </div>
             <div className="grid">
-                <button className='bg-off-white-500 border border-coral-500 hover:bg-coral-900 w-[15rem] py-3 px-8 my-2 rounded font-OpenSans' onClick={handleLogout}>Logout</button>
-                <button className='bg-off-white-500 border border-coral-500 hover:bg-coral-900 w-[15rem] py-3 px-8 my-2 rounded font-OpenSans'>Delete Account</button>
+                <button className='border border-coral-500 hover:bg-coral-900 w-[16rem] py-4 my-2 rounded font-OpenSans' onClick={handleLogout}>
+                    Logout
+                </button>
+                <button className='border border-coral-500 hover:bg-coral-900 w-[16rem] py-4 my-2 rounded font-OpenSans'>
+                    Delete Account
+                </button>
             </div>
         </div>
     )

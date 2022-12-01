@@ -46,10 +46,12 @@ export default function Login({ setUser }) {
       });
   }, []);  // error && "Wrong email or password"
   return (
-    <div className="container w-full max-w-7xl px-4 mt-6">
-      <h1 className='text-4xl text-offwhite-900 font-paytoneOne uppercase'>Please log in</h1>
+    <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
+      <h2 className="xs:text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
+        Please log in
+      </h2>
       <form
-        className="w-full flex flex-col py-4 font-openSans gap-[10px]"
+        className="w-full flex flex-col py-4 font-openSans gap-[0.3rem]"
         onSubmit={handleSubmit}>
         <label
           className="text-left relative"
@@ -61,15 +63,14 @@ export default function Login({ setUser }) {
                 <VscError className="absolute left-[100%] top-[25px] text-[#950000] w-12 h-12" />
               </> : null
           }
+          Email address
         </label>
         <input
-          className="p-5 my-2 bg-grey-100 outline-ocean-700"
+          className="p-5 mb-8 bg-grey-100 outline-ocean-700"
           name="email"
           type="text"
-          placeholder="email" />
-        <label
-          className="text-left relative"
-          htmlFor="password">{/* {
+          placeholder="Enter a valid email" />
+        <label className="text-left relative" htmlFor="password">{/* {
             errorPassword ?  
               <>
                 <span>Wrong password</span> 
@@ -77,25 +78,20 @@ export default function Login({ setUser }) {
               </> : 
               <IoIosCheckmarkCircleOutline className="absolute left-[100%] top-[15px] text-[#025F27] w-12 h-12"/>
             }  */}
+          Password
         </label>
-        <input
-          className="p-5 my-2 bg-grey-100 outline-ocean-700"
-          name="password"
-          type="password"
-          placeholder="password" />
-        <button
-          className='bg-coral-500 hover:bg-coral-900 py-3 my-6 w-[15rem] rounded font-OpenSans font-bold'>
+        <input className="p-5 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Password" />
+        <button className='bg-coral-500 hover:bg-coral-900 text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
           Login
         </button>
       </form>
       <div className="w-full">
-        <p className="font-openSans text-offwhite-900">Not registered yet?</p>
-        <Link to="/register">
-          <button
-            className='border border-coral-500 hover:bg-coral-900 py-3 px-8 my-6 w-[15rem] rounded font-OpenSans text-offwhite-900'>
-            Sign Up
-          </button>
-        </Link>
+        <p className="text-grey-500">
+          Not registered yet?&nbsp;
+          <Link className="text-coral-500 hover:text-coral-900" to="/register">
+            Sign Up here
+          </Link>.
+        </p>
       </div>
     </div>
   );
