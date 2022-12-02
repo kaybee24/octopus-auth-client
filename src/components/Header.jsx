@@ -7,13 +7,13 @@ export default function Header({ user, posts, setPosts, search, setSearch }) {
   return (
     <>
       <Logo />
-      <header className="flex justify-between bg-ocean-900 px-12">
+      <header>
         {user ? <NavLoggedIn
-                  search={search}
-                  setSearch={setSearch}
-                  posts={posts}
-                  setPosts={setPosts}
-          /> : <NavNotLoggedIn />}
+          search={search}
+          setSearch={setSearch}
+          posts={posts}
+          setPosts={setPosts}
+        /> : <NavNotLoggedIn />}
       </header>
     </>
   );

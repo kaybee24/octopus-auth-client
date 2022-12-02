@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 
 export default function ScrollToTop() {
-    const [showTopBtn, setShowTopBtn] = useState(false);
+    const [setShowTopBtn] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -25,7 +25,7 @@ export default function ScrollToTop() {
         <div className="relative">
             <FiArrowUpCircle
                 onClick={goToTop}
-                className="fixed w-12 h-12 right bottom-[2rem] right-[2rem] text-offwhite-900 z-50"
+                className="fixed w-12 h-12 bottom-[2rem] right-[2rem] text-offwhite-900 z-50"
             />
         </div>
     )
