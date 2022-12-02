@@ -8,34 +8,38 @@
 
 body {
   background-color: #012f43;
+  background: linear-gradient(170deg, rgba(1,47,67,1) 30%, rgba(0,15,22,1) 100%);
 }
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 90%;
-  top: 36px;
+  width: 2rem;
+  height: 1.5rem;
+  right: 5%;
+  top: 2rem;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #fff;
+  background: #345969;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #ffa395;
+  background: #FF482C;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
+  height: 2.5rem;
+  width: 2.5rem;
   background: #bdc3c7;
 }
 
@@ -52,18 +56,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   background: #1a4355;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
+  padding: 2.5rem 2rem 0;
+  font-size: 1.15rem;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
   color: #fafafa;
+  text-align: center;
   padding: 0.8em;
 }
 
@@ -75,4 +75,59 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Error Page */
+.errorpage {
+  background-image: url("./assets/bg_error.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  padding: 14rem 0rem;
+}
+
+/* Loader */
+.water_loader {
+   width: 20rem;
+   height:20rem;
+   background-color: #67828E; 
+   border-radius: 50%;
+   position: relative;
+   overflow: hidden;
+}
+
+.water_loader:after, 
+.water_loader:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: 50%;
+    background-color: #FAFAFA;
+}
+
+.water_loader:after {
+    border-radius: 42%;
+    animation: water_loader 6s linear infinite;
+}
+
+.water_loader:before {
+    border-radius: 35%;
+    background-color: #345969;
+    animation: water_loader 6s linear infinite;
+}
+
+@keyframes water_loader {
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+        top: -30%;
+    }
+    50%{
+        top: -50%;
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+        top: -100%;
+    }
 }

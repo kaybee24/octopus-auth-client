@@ -7,10 +7,22 @@ export default function Login({ setUser }) {
   let navigate = useNavigate();
   const [errorEmail, setErrorEmail] = useState(null);
   const [errorPassword, setErrorPassword] = useState(null);
+  const [disabled, setDisabled] = useState(false)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
+    setDisabled(true)
     const data = new FormData(form);
     var object = {};
     data.forEach(function (value, key) {
@@ -69,7 +81,9 @@ export default function Login({ setUser }) {
           className="p-5 mb-8 bg-grey-100 outline-ocean-700"
           name="email"
           type="text"
-          placeholder="Enter a valid email" />
+          placeholder="Enter a valid email"
+          onChange={handleEmailChange}
+          value={email} />
         <label className="text-left relative" htmlFor="password">{/* {
             errorPassword ?  
               <>
@@ -80,8 +94,14 @@ export default function Login({ setUser }) {
             }  */}
           Password
         </label>
-        <input className="p-5 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Password" />
-        <button className='bg-coral-500 hover:bg-coral-900 text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
+        <input
+          className="p-5 bg-grey-100 outline-ocean-700"
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handlePasswordChange}
+          value={password} />
+        <button disabled={!email || !password} className='bg-coral-500 hover:bg-coral-900 disabled:opacity-50 disabled:pointer-events-none text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
           Login
         </button>
       </form>
