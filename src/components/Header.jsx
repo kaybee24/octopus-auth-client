@@ -7,9 +7,9 @@ export default function Header({ user }) {
   return (
     <>
       <Logo />
-          <header className="flex justify-between bg-ocean-900 py-4 px-12">
-            {user ? <NavLoggedIn /> : <NavNotLoggedIn />}
-          </header>
+      <header className="flex justify-between bg-ocean-900 px-12">
+        {user ? <NavLoggedIn /> : <NavNotLoggedIn />}
+      </header>
     </>
   );
 

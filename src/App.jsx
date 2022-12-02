@@ -12,6 +12,7 @@ import Header from './components/Header.jsx';
 import NewEvent from "./components/NewEvent";
 import Footer from "./components/Footer";
 import LoggedInAreaEvents from "./pages/LoggedInAreaEvents";
+import Loader from "./pages/Loader";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -61,7 +62,7 @@ function App() {
     <div>
       <Header user={user} handleLogout={handleLogout} />
       {loading ? (<div className="h-[100vh] grid content-center"><div className="flex justify-center">
-        <BeatLoader />
+        <Loader />
       </div></div>)
         : (
           <Routes>

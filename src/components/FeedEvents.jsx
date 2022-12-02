@@ -28,7 +28,7 @@ export default function FeedEvents({ user }) {
         <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
             <ScrollToTop />
             {events.slice(0).reverse().map((event) => (
-                <div key={event._id} className="max-w-[70rem]">
+                <div key={event._id} className="relative max-w-[70rem] bg-ocean-800 px-3 py-5 my-4 rounded">
                     <p className="my-8">
                         {event.title}
                         <br />

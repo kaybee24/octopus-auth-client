@@ -17,8 +17,8 @@ export default function MyFeed({ user }) {
         credentials: "include",
       })
         .then((res) => res.json())
-        .then((messages) => {
-          setPosts(messages.data);
+        .then((posts) => {
+          setPosts(posts.data);
         })
         .catch((err) => console.log(err));
     }
@@ -27,37 +27,38 @@ export default function MyFeed({ user }) {
   return (
     <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
       <form
-          onSubmit={(event) => {
-            event.preventDefault()
-            console.log(search)
+        onSubmit={(event) => {
+          event.preventDefault()
+          console.log(search)
 
-            fetch(import.meta.env.VITE_PST_API + "?search=" + search.trim(), {
-              mode: "cors",
-              credentials: "include",
+          fetch(import.meta.env.VITE_PST_API + "?search=" + search.trim(), {
+            mode: "cors",
+            credentials: "include",
+          })
+            .then((res) => res.json())
+            .then((posts) => {
+              setPosts(posts.data);
             })
-                .then((res) => res.json())
-                .then((messages) => {
-                  setPosts(messages.data);
-                })
-                .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
 
-          }}
+        }}
       >
         <input
-            type="text"
-            placeholder="search"
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            maxLength={100}
+          type="text"
+          placeholder="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          maxLength={100}
         />
         <button type="submit">SEARCH</button>
-    </form>
+      </form>
       <ScrollToTop />
       {posts.slice(0).reverse().map((post) => (
-        <div key={post._id} className="max-w-[70rem]">
-          <p className="my-8">
-            {post.user.name} – {post.createdAt}
-            <br />
+        <div key={post._id} className="relative max-w-[70rem] bg-ocean-800 px-3 py-5 my-4 rounded">
+          <p>
+            {post.user.name} <span className="text-grey-700 absolute right-3">{post.createdAt}</span>
+          </p>
+          <p className="text-xl">
             {post.message}
           </p>
         </div>
