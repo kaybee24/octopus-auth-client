@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 
-const NewPost = () => {
+const NewPost = ({setPosts}) => {
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
-    const data = new FormData(form);
+    const formData = new FormData(form);
     var object = {};
-    data.forEach(function (value, key) {
+    formData.forEach(function (value, key) {
       object[key] = value;
     });
 
@@ -22,9 +22,9 @@ const NewPost = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // console.log(data);
+          setPosts(p => [...p, data.newDoc])
         } else {
-          alert(data.message);
+          console.log(data.message);
         }
       });
   }, []);

@@ -60,7 +60,7 @@ export default function Register({ setUser }) {
       alert("Passwords do not match!");
     }
   },
-    [],);
+    []);
 
   return (
     <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">

@@ -6,9 +6,6 @@ export default function Pagination({page, setPage, rangeLength}) {
     for (let i = page - 5; i <= page + 4; i++) {
     pages.push(i + offset);
   }
-  return pages.map((pn) => 
-    <>
-        <button className="pagination-button" onClick={() => setPage(pn)}>{pn + 1}</button>
-    </>
+  return pages.map((pn, i) =>  <button key={i} className="pagination-button" onClick={() => setPage(pn)}>{pn + 1}</button>
     );
 }

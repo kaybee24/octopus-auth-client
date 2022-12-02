@@ -16,6 +16,8 @@ import Loader from "./pages/Loader";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [search, setSearch] = useState('')
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/me`, {
@@ -60,7 +62,14 @@ function App() {
 
   return (
     <div>
-      <Header user={user} handleLogout={handleLogout} />
+      <Header 
+        user={user}
+        search={search}
+        setSearch={setSearch}
+        posts={posts}
+        setPosts={setPosts}
+        handleLogout={handleLogout}
+      />
       {loading ? (<div className="h-[100vh] grid content-center"><div className="flex justify-center">
         <Loader />
       </div></div>)
@@ -85,7 +94,11 @@ function App() {
             />
             <Route
               path="/my-feed"
-              element={<LoggedInArea user={user} />}
+              element={<LoggedInArea 
+                        search={search}
+                        posts={posts} 
+                        setPosts={setPosts} 
+                        user={user} />}
             />
             <Route
               path="/new-event"

@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 
-export default function Search() {
-  const [search, setSearch] = useState('')
-  const [posts, setPosts] = useState([]);
+export default function Search({ posts, setPosts, search, setSearch }) {
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault()
-        // console.log(search)
 
-        fetch(import.meta.env.VITE_PST_API + "?search=" + search.trim(), {
+        fetch(`${import.meta.env.VITE_PST_API}?search=${search.trim()}`, {
           mode: "cors",
           credentials: "include",
         })
