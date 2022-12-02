@@ -25,8 +25,7 @@ export default function ScrollToTop() {
         <div className="relative">
             <FiArrowUpCircle
                 onClick={goToTop}
-                className="absolute w-12 h-12 right"
-                style={{ position: "fixed", bottom: "2em", right: "2em" }}
+                className="fixed w-12 h-12 right bottom-[2rem] right-[2rem] text-offwhite-900 z-50"
             />
         </div>
     )
