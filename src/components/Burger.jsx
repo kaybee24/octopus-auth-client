@@ -12,7 +12,10 @@ const Burger = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="text-gray-600 hover:text-blue-600">
-          <Link to="/my-feed">Feed</Link>
+          <Link to="/my-feed">Feed Posts</Link>
+        </li>
+        <li className="text-gray-600 hover:text-blue-600">
+          <Link to="/feed-events">Feed Events</Link>
         </li>
         <li className=" text-gray-600 hover:text-blue-600">
           <Link to="/account">Account</Link>

@@ -1,15 +1,15 @@
-import { useRef, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { VscError } from "react-icons/vsc";
 //import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 export default function Login({ setUser }) {
-  let navigate = useNavigate();
   const [errorEmail, setErrorEmail] = useState(null);
   const [errorPassword, setErrorPassword] = useState(null);
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -101,7 +101,7 @@ export default function Login({ setUser }) {
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password} />
-        <button disabled={!email || !password} className='bg-coral-500 hover:bg-coral-900 disabled:opacity-50 disabled:pointer-events-none text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
+        <button disabled={!email || !password} className='bg-coral-500 hover:bg-coral-900 disabled:opacity-70 disabled:pointer-events-none text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
           Login
         </button>
       </form>

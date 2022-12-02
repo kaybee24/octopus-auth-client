@@ -13,6 +13,7 @@ const Account = ({ handleLogout, user }) => {
     else if (hours >= 17 && hours <= 24)
         greet = "evening";
     if (!user) return <h1>loading</h1>
+
     return (
         <div className="container max-w-7xl px-4 mt-6 text-offwhite-900 min-h-[100vh]">
             <h1 className="text-4xl font-paytoneOne uppercase">{`Good ${greet} ${user.name}`}</h1>

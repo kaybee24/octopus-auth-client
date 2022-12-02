@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ScrollToTop from "./scrollToTop";
 import Pagination from "./Pagination";
+import Search from "./Search";
 
 export default function MyFeed({ user }) {
   const [posts, setPosts] = useState([]);
@@ -26,6 +27,8 @@ export default function MyFeed({ user }) {
 
   return (
     <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
+
+      <Search />
       <form
         onSubmit={(event) => {
           event.preventDefault()
@@ -45,10 +48,11 @@ export default function MyFeed({ user }) {
       >
         <input
           type="text"
-          placeholder="search"
+          placeholder="Search through posts"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           maxLength={100}
+          className="text-grey-700 p-4 mr-4"
         />
         <button type="submit">SEARCH</button>
       </form>
