@@ -1,14 +1,35 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Register({ setUser }) {
   let navigate = useNavigate();
   const passwordConfirmationRef = useRef();
+  const [disabled, setDisabled] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConf, setPasswordConf] = useState("");
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handlePasswordConfChange = (event) => {
+    setPasswordConf(event.target.value);
+  };
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const form = event.target;
-
+    setDisabled(true);
     const data = new FormData(form);
     var object = {};
     data.forEach(function (value, key) {
@@ -50,21 +71,46 @@ export default function Register({ setUser }) {
         <label htmlFor="name">
           Name
         </label>
-        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="name" type="text" placeholder="Enter your name" />
+        <input
+          className="p-5 mb-8 bg-grey-100 outline-ocean-700"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          onChange={handleNameChange}
+          value={name}
+        />
         <label htmlFor="email">
           Email address
         </label>
-        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="email" type="text" placeholder="Enter a valid email" />
+        <input
+          className="p-5 mb-8 bg-grey-100 outline-ocean-700"
+          name="email"
+          type="text"
+          placeholder="Enter a valid email"
+          onChange={handleEmailChange}
+          value={email} />
         <label htmlFor="password">
           Password
         </label>
-        <input className="p-5 mb-8 bg-grey-100 outline-ocean-700" name="password" type="password" placeholder="Password" />
+        <input
+          className="p-5 mb-8 bg-grey-100 outline-ocean-700"
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handlePasswordChange}
+          value={password} />
         <label htmlFor="password">
           Confirm your password
         </label>
-        <input className="p-5 bg-grey-100 outline-ocean-700" ref={passwordConfirmationRef} type="password" placeholder="Confirm your password"
+        <input
+          className="p-5 bg-grey-100 outline-ocean-700"
+          ref={passwordConfirmationRef}
+          type="password"
+          placeholder="Confirm your password"
+          onChange={handlePasswordConfChange}
+          value={passwordConf}
         />
-        <button className='bg-coral-500 hover:bg-coral-900 text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
+        <button disabled={!name || !email || !password || !passwordConf} className='bg-coral-500 hover:bg-coral-900 disabled:opacity-70 disabled:pointer-events-none text-darkgrey-900 w-[16rem] py-4 mt-6 rounded font-OpenSans font-bold'>
           Register
         </button>
       </form>
