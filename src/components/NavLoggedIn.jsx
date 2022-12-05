@@ -20,7 +20,7 @@ const NavLoggedIn = ({ search, setSearch, posts, setPosts }) => {
                 />
             </div>
             <Burger />
-            <ScrollToTop />
+            <ScrollToTop smooth/>
         </>
     )
 }
