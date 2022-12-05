@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ScrollToTop from "./scrollToTop";
 import Pagination from "./Pagination";
 import Search from "./Search";
@@ -26,7 +26,7 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
 
   return (
     <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
-      <ScrollToTop />
+      <ScrollToTop smooth/>
       {posts.slice(0).reverse().map((post) => (
         <div key={post._id} className="relative max-w-[70rem] bg-ocean-800 px-3 py-5 my-4 rounded">
           <p>
