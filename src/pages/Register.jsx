@@ -63,12 +63,12 @@ export default function Register({ setUser }) {
     []);
 
   return (
-    <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
-      <h2 className="xs:text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
-        Let's create your account
+    <div className="container w-full max-w-7xl px-4 mt-6">
+      <h2 className="xs:text-3xl md:text-5xl pb-2 text-offwhite-900 font-paytoneOne uppercase">
+        Let&apos;s create your account
       </h2>
       <form className="w-full flex flex-col py-4 font-openSans gap-[0.3rem]" onSubmit={handleSubmit}>
-        <label htmlFor="name">
+        <label htmlFor="name" className="text-offwhite-900">
           Name
         </label>
         <input
@@ -79,7 +79,7 @@ export default function Register({ setUser }) {
           onChange={handleNameChange}
           value={name}
         />
-        <label htmlFor="email">
+        <label htmlFor="email" className="text-offwhite-900">
           Email address
         </label>
         <input
@@ -89,7 +89,7 @@ export default function Register({ setUser }) {
           placeholder="Enter a valid email"
           onChange={handleEmailChange}
           value={email} />
-        <label htmlFor="password">
+        <label htmlFor="password" className="text-offwhite-900">
           Password
         </label>
         <input
@@ -99,7 +99,7 @@ export default function Register({ setUser }) {
           placeholder="Password"
           onChange={handlePasswordChange}
           value={password} />
-        <label htmlFor="password">
+        <label htmlFor="password" className="text-offwhite-900">
           Confirm your password
         </label>
         <input

@@ -9,7 +9,7 @@ const ErrorPage = () => {
                     Shoot!
                 </h2>
                 <h3 className='text-2xl font-paytoneOne'>
-                    We can't seem to find the page you're looking for.
+                    We can&apos;t seem to find the page you&apos;re looking for.
                 </h3>
                 <form>
                     <Link to="/">

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-export default () => (
+
+export default function Landingpage () {
+  return (
   <>
     <div className="grid w-full text-offwhite-900">
       <div className="container max-w-7xl px-4">
@@ -46,32 +48,6 @@ export default () => (
         </div>
       </div>
       <div className="container max-w-7xl px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {/* <div className="items-center">
-            <img src="src/assets/what_nurdles.jpg" alt="Nurdles on a beach" />
-            <p className="font-openSans text-center p-6 mb-4">
-              Nurdles and microplastic
-            </p>
-          </div>
-          <div className="items-center">
-            <img src="src/assets/what_litter_1.jpg" alt="Random litter on a beach" />
-            <p className="font-openSans text-center p-6 mb-4">
-              Anyone needs a hoodie?
-            </p>
-          </div>
-          <div className="items-center">
-            <img src="src/assets/what_litter_2.jpg" alt="Plastic sucker sticks, fork and knife on a beach" />
-            <p className="font-openSans text-center p-6 mb-4">
-              A different kind of lunch break
-            </p>
-          </div>
-          <div className="items-center">
-            <img src="src/assets/what_litter_3.jpg" alt="A bucket full of litter" />
-            <p className="font-openSans text-center p-6 mb-4">
-              Keep going … there is more.
-            </p>
-          </div> */}
-        </div>
         <div className="grid py-6">
           <h2 className="text-4xl pb-4 font-paytoneOne">
             Why we do it
@@ -120,3 +96,4 @@ export default () => (
     </div>
   </>
 );
+}
