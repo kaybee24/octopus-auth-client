@@ -26,7 +26,7 @@ export default function Search({ setPosts, search, setSearch }) {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           maxLength={100}
-          className="py-3 pl-5 sm:w-[10rem] md:w-[30rem] bg-ocean-700 text-offwhite-900"
+          className="py-3 pl-5 w-[8rem] md:w-[30rem] bg-ocean-700 text-offwhite-900"
         />
         <button><FiSearch
           type="submit"

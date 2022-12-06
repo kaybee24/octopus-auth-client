@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ScrollToTop from "./scrollToTop";
-import Pagination from "./Pagination";
-import Search from "./Search";
 
 export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
-  const [page, setPage] = useState(0);
-  const [hitsPerPage, setHitsPerPage] = useState(10);
-
 
   useEffect(() => {
     if (user) {
@@ -37,7 +32,6 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
           </p>
         </div>
       ))}
-      <Pagination page={page} setPage={setPage} rangeLength={20} />
     </div>
   );
 }

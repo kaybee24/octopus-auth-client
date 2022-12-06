@@ -58,15 +58,15 @@ export default function Login({ setUser }) {
       });
   }, []);  // error && "Wrong email or password"
   return (
-    <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
-      <h2 className="xs:text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
+    <div className="container w-full max-w-7xl px-4 mt-6">
+      <h2 className="xs:text-3xl md:text-5xl pb-2 text-offwhite-900 font-paytoneOne uppercase">
         Please log in
       </h2>
       <form
         className="w-full flex flex-col py-4 font-openSans gap-[0.3rem]"
         onSubmit={handleSubmit}>
         <label
-          className="text-left relative"
+          className="text-left relative text-offwhite-900"
           htmlFor="email">
           {
             errorEmail ?
@@ -84,7 +84,7 @@ export default function Login({ setUser }) {
           placeholder="Enter a valid email"
           onChange={handleEmailChange}
           value={email} />
-        <label className="text-left relative" htmlFor="password">{/* {
+        <label className="text-left relative text-offwhite-900" htmlFor="password">{/* {
             errorPassword ?  
               <>
                 <span>Wrong password</span> 
