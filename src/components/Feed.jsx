@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 import ScrollToTop from "./scrollToTop";
-import { format, compareAsc } from 'date-fns';
+//import { format, compareAsc } from 'date-fns';
 
 export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
+  function convertToLocalTime(time) {
+    const date = new Date(time);
+    return date.toLocaleString();
+}
   useEffect(() => {
     if (user) {
       // console.log("user is available, getting messages..");
@@ -25,7 +29,7 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
       {posts.slice(0).reverse().map((post) => (
         <div key={post._id} className="relative max-w-[70rem] bg-ocean-800 px-3 py-5 my-4 rounded">
           <p>
-            {post.user.name} <span className="text-grey-700 absolute right-3">{post.createdAt}</span>
+            {post.user.name} <span className="text-grey-700 absolute right-3">{convertToLocalTime(post.createdAt)}</span>
           </p>
           <p className="text-xl">
             {post.message}
