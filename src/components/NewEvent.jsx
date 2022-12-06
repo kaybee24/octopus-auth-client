@@ -32,27 +32,36 @@ const NewEvent = () => {
 
     return (
         <div className="container w-full max-w-7xl px-4 mt-6">
-            <h2 className='text-4xl uppercase font-paytoneOne text-offwhite-900'>What is happening in your area?</h2>
-            <form className="w-full flex flex-col py-4 font-openSans" onSubmit={handleSubmit}>
+            <h2 className='text-4xl uppercase font-paytoneOne text-offwhite-900'>
+                What is happening in your area?
+            </h2>
+            <form 
+                className="w-full flex flex-col py-4 font-openSans" 
+                onSubmit={handleSubmit}>
                 <input
-                    className="p-5 my-2 bg-grey-100 outline-ocean-700"
+                    className="p-5 my-2 bg-grey-100 outline-ocean-700 max-w-[70rem]"
                     name="title"
                     type="text"
-                    placeholder="title" />
-                <textarea className="p-5 my-2 bg-grey-100 outline-ocean-700" name="message" type="text" placeholder="What is your event about?" rows="4"></textarea>
+                    placeholder="Event title" />
+                <textarea 
+                    className="p-5 my-2 bg-grey-100 outline-ocean-700 max-w-[70rem]" 
+                    name="message" 
+                    type="text" 
+                    placeholder="What is your event about?" 
+                    rows="4"></textarea>
                 <input
-                    className="p-5 my-2 bg-grey-100 outline-ocean-700"
+                    className="p-5 my-2 bg-grey-100 outline-ocean-700 max-w-[70rem]"
                     name="city"
                     type="text"
-                    placeholder="city" />
+                    placeholder="City" />
                 <input
-                    className="p-5 my-2 bg-grey-100 outline-ocean-700"
+                    className="p-5 my-2 bg-grey-100 outline-ocean-700 max-w-[70rem]"
                     name="location"
                     type="text"
-                    placeholder="location" />
+                    placeholder="Location" />
 
                 <input
-                    className="p-5 my-2 bg-grey-100 outline-ocean-700"
+                    className="p-5 my-2 bg-grey-100 outline-ocean-700 max-w-[70rem]"
                     name="eventDateTime"
                     type="datetime-local"
                     value="2022-11-30T18:00"
