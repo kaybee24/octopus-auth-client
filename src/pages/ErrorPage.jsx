@@ -5,7 +5,7 @@ const ErrorPage = () => {
     return (
         <>
             <div className="errorpage container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
-                <h2 className="xs:text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
+                <h2 className="text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
                     Shoot!
                 </h2>
                 <h3 className='text-2xl font-paytoneOne'>

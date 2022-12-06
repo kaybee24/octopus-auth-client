@@ -79,7 +79,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Error Page */
 .errorpage {
-  background-image: url("./assets/bg_error.png");
+  background-image: url("images/bg_error.png");
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;

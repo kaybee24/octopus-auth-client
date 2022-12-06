@@ -6,7 +6,7 @@ export default function Landingpage () {
     <div className="grid w-full text-offwhite-900">
       <div className="container max-w-7xl px-4">
         <div className="py-t leading-relaxed">
-          <h1 className="xs:text-6xl md:text-8xl font-paytoneOne uppercase pb-6">
+          <h1 className="text-4xl md:text-8xl font-paytoneOne uppercase pb-6">
             Cleaning the ocean, rivers and lakes
           </h1>
           <h2 className="font-paytoneOne text-4xl pb-2">
@@ -19,7 +19,7 @@ export default function Landingpage () {
         </div>
       </div>
       <div className="flex justify-end pb-3">
-        <img src="src/assets/octopus_arm_01.png" className="w-[50%] md:w-[30%]" />
+        <img src="images/octopus_arm_01.png" className="w-[50%] md:w-[30%]" />
       </div>
       <div className="grid text-center bg-ocean-800 py-12">
         <h2 className="text-4xl font-paytoneOne pb-2">Join our mission</h2>
@@ -91,7 +91,7 @@ export default function Landingpage () {
 
       </div>
       <div className="flex justify-start">
-        <img src="src/assets/octopus_arm_02.png" className="w-[50%] md:w-[30%]" />
+        <img src="images/octopus_arm_02.png" className="w-[50%] md:w-[30%]" />
       </div>
     </div>
   </>

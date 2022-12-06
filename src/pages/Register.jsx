@@ -64,7 +64,7 @@ export default function Register({ setUser }) {
 
   return (
     <div className="container w-full max-w-7xl px-4 mt-6">
-      <h2 className="xs:text-3xl md:text-5xl pb-2 text-offwhite-900 font-paytoneOne uppercase">
+      <h2 className="text-3xl md:text-5xl pb-2 text-offwhite-900 font-paytoneOne uppercase">
         Let&apos;s create your account
       </h2>
       <form className="w-full flex flex-col py-4 font-openSans gap-[0.3rem]" onSubmit={handleSubmit}>
