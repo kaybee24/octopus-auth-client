@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import ScrollToTop from "./scrollToTop";
+import { format, compareAsc } from 'date-fns';
 
 export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
-
   useEffect(() => {
     if (user) {
       // console.log("user is available, getting messages..");
