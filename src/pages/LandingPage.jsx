@@ -43,7 +43,11 @@ export default function Landingpage () {
             What we do
           </h2>
           <p className="font-openSans text-xl md:max-w-[70rem]">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+            We connect people for a trash free coastline.<br />
+            The most common types of garbage found on beaches include cigarette butts, food wrappers, plastic straws, plastic bottle caps, fishing vessels and plastic beverage bottles. 
+            Plastic debris kills over one million marine animals each year. It destroys habitats leading to the extinction of entire species. 
+            The impact is felt not only by the aquatic ecosystems but also by the human population that depends on the sea and rivers for food and commerce. 
+            <span className="text-highlight-900"> We want to connect people who want to help and make a difference. </span>
           </p>
         </div>
       </div>
@@ -53,7 +57,8 @@ export default function Landingpage () {
             Why we do it
           </h2>
           <p className="font-openSans text-xl md:max-w-[70rem]">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Thousands of marine animals worldwide have been affected by plastic pollution, including sea turtles, seabirds, and marine mammals. 
+          Therefore, beach clean-ups are vital to mitigate the problem caused by ocean debris and the danger that plastic pollution poses to marine life.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 md:space-x-6 py-6 content-center">
@@ -97,3 +102,4 @@ export default function Landingpage () {
   </>
 );
 }
+
