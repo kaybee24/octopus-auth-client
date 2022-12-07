@@ -8,7 +8,6 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
 }
   useEffect(() => {
     if (user) {
-      // send fetch request with cookies
       fetch(import.meta.env.VITE_PST_API, {
         mode: "cors",
         credentials: "include",
@@ -37,3 +36,4 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
     </div>
   );
 }
+

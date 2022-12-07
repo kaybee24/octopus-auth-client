@@ -11,6 +11,10 @@ body {
   background: linear-gradient(170deg, rgba(1,47,67,1) 30%, rgba(0,15,22,1) 100%);
 }
 
+svg {
+  display: inline-block !important;
+}
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
