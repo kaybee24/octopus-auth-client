@@ -21,6 +21,7 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
         })
         .catch((err) => console.log(err));
     }
+    console.log(posts)
   }, [user]);
 
   return (
@@ -29,7 +30,7 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
       {posts.slice(0).reverse().map((post) => (
         <div key={post._id} className="relative max-w-[70rem] bg-ocean-800 px-3 py-5 my-4 rounded">
           <p>
-            {post.user.name} <span className="text-grey-700 absolute right-3">{convertToLocalTime(post.createdAt)}</span>
+            {post.user ? post.user.name : 'anonymus'} <span className="text-grey-700 absolute right-3">{convertToLocalTime(post.createdAt)}</span>
           </p>
           <p className="text-xl">
             {post.message}
