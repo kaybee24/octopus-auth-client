@@ -81,15 +81,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* Error Page */
-.errorpage {
-  background-image: url("images/bg_error.png");
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: cover;
-  padding: 14rem 0rem;
-}
-
 /* Loader */
 .water_loader {
    width: 20rem;

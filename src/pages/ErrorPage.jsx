@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const ErrorPage = () => {
     return (
         <>
-            <div className="errorpage container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
-                <h2 className="text-3xl md:text-5xl pb-2 font-paytoneOne uppercase">
+            <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">
+                <h2 className="text-4xl md:text-8xl pb-2 font-paytoneOne uppercase">
                     Shoot!
                 </h2>
                 <h3 className='text-2xl font-paytoneOne'>
@@ -18,6 +18,9 @@ const ErrorPage = () => {
                         </button>
                     </Link>
                 </form>
+            </div>
+            <div className='grid'>
+                <img src="images/bg_error.png" className="w-[100%]" />
             </div>
 
         </>
