@@ -6,20 +6,19 @@ export default function MyFeed({ user, posts, setPosts, search, setSearch }) {
     const date = new Date(time);
     return date.toLocaleString();
 }
-  useEffect(() => {
-    if (user) {
-      fetch(import.meta.env.VITE_PST_API, {
-        mode: "cors",
-        credentials: "include",
+useEffect(() => {
+  if (user) {
+    fetch(import.meta.env.VITE_PST_API, {
+      mode: "cors",
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((posts) => {
+        setPosts(posts.data);
       })
-        .then((res) => res.json())
-        .then((posts) => {
-          setPosts(posts.data);
-        })
-        .catch((err) => console.log(err));
-    }
-    console.log(posts)
-  }, [user]);
+      .catch((err) => console.log(err));
+  }
+}, [user]);
 
   return (
     <div className="container w-full max-w-7xl px-4 mt-6 text-offwhite-900">

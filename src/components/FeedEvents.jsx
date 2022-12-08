@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import ScrollToTop from "./scrollToTop";
 
-export default function FeedEvents({ user }) {
-    const [events, setEvents] = useState([]);
+export default function FeedEvents({ user, events, setEvents }) {
 
     useEffect(() => {
         if (user) {

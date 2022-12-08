@@ -17,6 +17,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [search, setSearch] = useState('')
   const [posts, setPosts] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_AUTH_API}/me`, {
@@ -101,12 +102,12 @@ function App() {
             />
             <Route
               path="/new-event"
-              element={<NewEvent user={user} />
+              element={<NewEvent user={user} events={events} setEvents={setEvents} />
               }
             />
             <Route
               path="/feed-events"
-              element={<LoggedInAreaEvents user={user} />}
+              element={<LoggedInAreaEvents user={user} events={events} setEvents={setEvents} />}
             />
             <Route
               path="*"

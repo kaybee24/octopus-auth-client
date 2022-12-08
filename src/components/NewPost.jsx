@@ -29,12 +29,17 @@ const NewPost = ({setPosts}) => {
       },
       body: JSON.stringify(object),
     })
-      .then((response) => response.json())
+      .then((response) =>{
+        console.log(response)
+        return response.json()
+      })
       .then((data) => {
         if (data.success) {
+          console.log("NEW POST::: ", data.newDoc)
           setPosts(p => [...p, data.newDoc])
         } else {
           console.log(data.message);
+          console.log("NEW POST FAIL ::: ", data.message )
         }
       });
   }, []);

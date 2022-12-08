@@ -1,7 +1,7 @@
 import React from "react";
 import { useCallback } from "react";
 
-const NewEvent = () => {
+const NewEvent = ({events, setEvents}) => {
     const handleSubmit = useCallback((event) => {
         event.preventDefault();
         const form = event.target;
@@ -23,7 +23,8 @@ const NewEvent = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
-                    // console.log(data);
+                    console.log(data);
+                    setEvents(p=>[...p, data.newEvent])
                 } else {
                     alert(data.message);
                 }
